@@ -6,7 +6,7 @@ package Systemd::Util;
 use 5.010001;
 use strict;
 use warnings;
-use Log::ger;
+#use Log::ger;
 
 use Exporter qw(import);
 our @EXPORT_OK = qw(systemd_is_running);
