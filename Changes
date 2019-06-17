@@ -2,7 +2,8 @@
 
 	- No functional changes.
 
-	- Try to workaround rendering issue (boldened text) on MetaCPAN.
+	- Try to workaround rendering issue (boldened text) on MetaCPAN (UPDATE:
+          still happens).
 
 
 0.001   2019-05-22 (PERLANCAR)
