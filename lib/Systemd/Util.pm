@@ -27,18 +27,18 @@ Will return payload of 1 if systemd is running, 0 if not running, `undef` if
 cannot determine for sure. The result metadata `func.note` will give more
 details. The following heuristics are currently used:
 
-1. Check if /sbin/init exists, if it does not the return 0.
+1. Check if `/sbin/init` exists, if it does not the return 0.
 
-2. Check if /sbin/init is a symlink to something with /systemd/ in its name. If
-yes, then we return 1. We use <pm:Cwd>'s `realpath()` instead of `readlink()`
+2. Check if `/sbin/init` is a symlink to something with "systemd" in its name.
+If yes, then we return 1. We use <pm:Cwd>'s `realpath()` instead of `readlink()`
 here, to handle multiple redirection.
 
-3. Check if /lib/systemd/systemd exists. Return 0 otherwise.
+3. Check if `/lib/systemd/systemd` exists. Return 0 otherwise.
 
-4. Check if /sbin/init is a hardlink to /lib/systemd/systemd by comparing its
-inode. Return 1 if it is.
+4. Check if `/sbin/init` is a hardlink to `/lib/systemd/systemd` by comparing
+its inode. Return 1 if it is.
 
-3. Return undef otherwise, since we detect that /lib/systemd/systemd exists
+3. Return undef otherwise, since we detect that `/lib/systemd/systemd` exists
 (systemd is installed) but we cannot be sure if it is running or not.
 
 When used as a CLI, this routine will exit 0 if systemd is running, 1 if systemd
